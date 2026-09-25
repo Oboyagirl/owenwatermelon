@@ -1,11 +1,4 @@
 import { Game } from '../types/game';
-import wmLogo from '../assets/images/owen_watermelon_logo_1790304644388.jpg';
-import wmThumb from '../assets/images/watermelon_merge_thumb_1790304655249.jpg';
-import arcadeBanner from '../assets/images/arcade_hero_banner_1790304665471.jpg';
-import retroBowlThumb from '../assets/images/retro_bowl_thumb_1790305313008.jpg';
-import grannyThumb from '../assets/images/granny_horror_thumb_1790306419920.jpg';
-import basketRandomThumb from '../assets/images/basket_random_thumb_1790306430872.jpg';
-import fnafThumb from '../assets/images/fnaf1_game_thumb_1790306441084.jpg';
 import ubgGamesList from './ubgFilteredGames.json';
 
 const CURATED_GAMES: Game[] = [
@@ -14,8 +7,10 @@ const CURATED_GAMES: Game[] = [
     title: "Granny",
     description: "Welcome to Granny. Escape her creepy house alive within five days. Move silently, search cabinets for keys, and don't make any noise!",
     category: "Action",
-    thumbnail: grannyThumb,
-    banner: arcadeBanner,
+    thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Granny/Granny.png",
+    banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Granny/Granny.png",
+    mirrors: ["https://freeonlinewebtools.github.io/gamelist4.github.io/Granny/", "https://ubghyper.github.io/GameList.github.io/Granny/"],
+    
     tags: ["Horror", "Escape", "Survival", "3D", "Granny"],
     rating: 4.8,
     plays: 62400,
@@ -35,8 +30,10 @@ const CURATED_GAMES: Game[] = [
     title: "Basket Random",
     description: "Wacky ragdoll two-player basketball with physics-defying players, changing balls, and unpredictable courts.",
     category: "Sports",
-    thumbnail: basketRandomThumb,
-    banner: arcadeBanner,
+    thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Basket-Random/basketrandom.jpg",
+    banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Basket-Random/splash.jpeg",
+    mirrors: ["https://basket-random.pages.dev/", "https://freeonlinewebtools.github.io/gamelist4.github.io/Basket-Random/", "https://ubghyper.github.io/GameList.github.io/Basket-Random/"],
+    
     tags: ["Basketball", "2 Player", "Ragdoll", "Sports", "Multiplayer"],
     rating: 4.9,
     plays: 53100,
@@ -54,8 +51,10 @@ const CURATED_GAMES: Game[] = [
     title: "Five Nights at Freddy's (FNAF 1)",
     description: "Survive the night shift as the security guard at Freddy Fazbear's Pizza. Monitor surveillance cameras and conserve power before animatronics enter the office!",
     category: "Action",
-    thumbnail: fnafThumb,
-    banner: arcadeBanner,
+    thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/FNAF-1/FNAF-1.png",
+    banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/FNAF-1/FNAF-1.png",
+    mirrors: ["https://freeonlinewebtools.github.io/gamelist8.github.io/FNAF-1/", "https://ubghyper.github.io/GameList.github.io/FNAF-1/"],
+    
     tags: ["Horror", "Survival", "FNAF", "Strategy", "Classic"],
     rating: 4.9,
     plays: 78500,
@@ -74,8 +73,10 @@ const CURATED_GAMES: Game[] = [
     title: "Retro Bowl",
     description: "Manage your NFL team, call tactical audibles, pass bullet balls, and lead your franchise to victory in this beloved 8-bit retro football sim.",
     category: "Sports",
-    thumbnail: retroBowlThumb,
-    banner: arcadeBanner,
+    thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Retro-Bowl/retrobowl.jpg",
+    banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Retro-Bowl/html5game/splash.png",
+    mirrors: ["https://retro--bowl.pages.dev/", "https://freeonlinewebtools.github.io/gamelist8.github.io/Retro-Bowl/", "https://ubghyper.github.io/GameList.github.io/Retro-Bowl/"],
+    
     tags: ["Football", "Sports", "Pixel", "NFL", "Retro Bowl"],
     rating: 4.9,
     plays: 48920,
@@ -94,8 +95,10 @@ const CURATED_GAMES: Game[] = [
     title: "Drive Mad",
     description: "Navigate tricky obstacle courses in this physics-based driving game! Balance your truck carefully to reach the finish line without flipping.",
     category: "Racing",
-    thumbnail: "https://ubghyper.github.io/GameList.github.io/Drive-Mad/logo.png",
-    banner: arcadeBanner,
+    thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Drive-Mad/logo.jpg",
+    banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Drive-Mad/webapp/cover.jpg",
+    mirrors: ["https://drive-mad.pages.dev/", "https://freeonlinewebtools.github.io/gamelist4.github.io/Drive-Mad/", "https://ubghyper.github.io/GameList.github.io/Drive-Mad/"],
+    
     tags: ["Racing", "Physics", "Truck", "Driving", "Popular"],
     rating: 4.9,
     plays: 89400,
@@ -113,8 +116,10 @@ const CURATED_GAMES: Game[] = [
     title: "Slope",
     description: "Roll an ultra-fast ball down a futuristic 3D neon tunnel course. Dodge obstacles, adjust your speed, and test your lightning-quick reflexes!",
     category: "Action",
-    thumbnail: "https://ubghyper.github.io/GameList.github.io/Slope/logo.png",
-    banner: arcadeBanner,
+    thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Slope/slope.jpg",
+    banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Slope/slope.jpg",
+    mirrors: ["https://slope.pages.dev/", "https://ubghyper.github.io/g/Slope/", "https://freeonlinewebtools.github.io/gamelist4.github.io/Slope/"],
+    
     tags: ["3D", "Runner", "Reflex", "Neon", "Arcade"],
     rating: 4.9,
     plays: 95200,
@@ -131,8 +136,10 @@ const CURATED_GAMES: Game[] = [
     title: "Subway Surfers",
     description: "Dash along the subway tracks, dodge trains, leap over obstacles, and escape the grumpy inspector and his dog in the world's most famous endless runner!",
     category: "Action",
-    thumbnail: "https://ubghyper.github.io/GameList.github.io/Subway-Surfers/subway-surfers.png",
-    banner: arcadeBanner,
+    thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Subway-Surfers/Subway-Surfers.png",
+    banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Subway-Surfers/Subway-Surfers.png",
+    mirrors: ["https://subway-surfers.pages.dev/", "https://ubghyper.github.io/g/Subway-Surfers/"],
+    
     tags: ["Endless Runner", "Action", "3D", "Classic"],
     rating: 4.9,
     plays: 124000,
@@ -151,8 +158,10 @@ const CURATED_GAMES: Game[] = [
     title: "Bitlife Life Simulator",
     description: "How will you live your BitLife? Make choices from birth through old age: study hard, fall in love, commit crimes, or become a billionaire!",
     category: "Casual",
-    thumbnail: "https://ubghyper.github.io/GameList.github.io/Bitlife/bitlife.png",
-    banner: arcadeBanner,
+    thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Bitlife/bitlife.png",
+    banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Bitlife/bitlife.png",
+    mirrors: ["https://bitlife.pages.dev/", "https://ubghyper.github.io/g/Bitlife/"],
+    
     tags: ["Simulation", "RPG", "Choice", "Story"],
     rating: 4.8,
     plays: 87100,
@@ -169,8 +178,10 @@ const CURATED_GAMES: Game[] = [
     title: "1v1.LOL",
     description: "Competitive third-person building simulator and shooter. Practice fast box fights, edit stairs, and battle players in 1v1 arenas.",
     category: "Action",
-    thumbnail: "https://freeonlinewebtools.github.io/gamelist7.github.io/1v1-LOL/logo.png",
-    banner: arcadeBanner,
+    thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/1v1-LOL/1v1-LOL.png",
+    banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/1v1-LOL/1v1-LOL.png",
+    mirrors: ["https://1v1-lol.pages.dev/", "https://freeonlinewebtools.github.io/gamelist7.github.io/1v1-LOL/"],
+    
     tags: ["Shooter", "Building", "Multiplayer", "Battle Royale", "1v1"],
     rating: 4.9,
     plays: 110000,
@@ -189,8 +200,10 @@ const CURATED_GAMES: Game[] = [
     title: "Cuphead",
     description: "The classic boss rush run-and-gun game inspired by 1930s rubber hose animation. Dodge projectiles, learn patterns, and defeat epic bosses.",
     category: "Action",
-    thumbnail: "https://freeonlinewebtools.github.io/gamelist8.github.io/Cuphead/logo.png",
-    banner: arcadeBanner,
+    thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Cuphead/cuphead.png",
+    banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Cuphead/cuphead.png",
+    mirrors: ["https://freeonlinewebtools.github.io/gamelist8.github.io/Cuphead/", "https://ubghyper.github.io/GameList.github.io/Cuphead/"],
+    
     tags: ["Action", "Boss", "Retro", "Difficult"],
     rating: 4.9,
     plays: 68000,
@@ -210,7 +223,7 @@ const CURATED_GAMES: Game[] = [
     description: "Full Minecraft running in your browser: mine diamonds, craft tools, build huge structures, and play survival or creative mode!",
     category: "Sandbox",
     thumbnail: "https://freeonlinewebtools.github.io/gamelist9.github.io/Minecraft/minecraft.png",
-    banner: arcadeBanner,
+    
     tags: ["Sandbox", "Building", "Survival", "Crafting", "Minecraft"],
     rating: 5.0,
     plays: 145000,
@@ -232,7 +245,7 @@ const CURATED_GAMES: Game[] = [
     description: "Granny and Grandpa keep you locked in their house this time. To survive, you have to try to get out of their house, but be careful and quiet!",
     category: "Action",
     thumbnail: "https://freeonlinewebtools.github.io/gamelist4.github.io/Granny-2/Granny-2.png",
-    banner: arcadeBanner,
+    
     tags: ["Horror", "Escape", "Survival", "3D", "Granny"],
     rating: 4.9,
     plays: 58200,
@@ -253,7 +266,7 @@ const CURATED_GAMES: Game[] = [
     description: "Welcome back to the new and improved Freddy Fazbear's Pizza! The old animatronics are joined by a new cast. Put on your Freddy Fazbear head to trick them!",
     category: "Action",
     thumbnail: "https://freeonlinewebtools.github.io/gamelist8.github.io/FNAF-2/FNAF-2.png",
-    banner: arcadeBanner,
+    
     tags: ["Horror", "FNAF", "Survival", "Strategy"],
     rating: 4.9,
     plays: 72100,
@@ -273,7 +286,7 @@ const CURATED_GAMES: Game[] = [
     description: "Thirty years after Freddy Fazbear's Pizza closed its doors, the events that took place there have become nothing more than a rumor. Survive Springtrap!",
     category: "Action",
     thumbnail: "https://freeonlinewebtools.github.io/gamelist8.github.io/FNAF-3/FNAF-3.png",
-    banner: arcadeBanner,
+    
     tags: ["Horror", "FNAF", "Survival", "Strategy"],
     rating: 4.8,
     plays: 64900,
@@ -292,7 +305,7 @@ const CURATED_GAMES: Game[] = [
     description: "The final chapter of the Five Nights at Freddy's original story. You must defend yourself against Nightmare Freddy, Chica, Bonnie, and Foxy lurking in your bedroom!",
     category: "Action",
     thumbnail: "https://freeonlinewebtools.github.io/gamelist6.github.io/FNAF-4/FNAF-4.png",
-    banner: arcadeBanner,
+    
     tags: ["Horror", "FNAF", "Survival", "Darkness"],
     rating: 4.9,
     plays: 69100,
@@ -312,7 +325,7 @@ const CURATED_GAMES: Game[] = [
     description: "The viral musical rhythm game with quirky animated beatboxers and dark horror transformations!",
     category: "Arcade",
     thumbnail: "https://ubghyper.github.io/GameList.github.io/Sprunki/sprunki.png",
-    banner: arcadeBanner,
+    
     tags: ["Music", "Rhythm", "Sprunki", "Beatbox"],
     rating: 4.9,
     plays: 93400,
@@ -330,7 +343,7 @@ const CURATED_GAMES: Game[] = [
     description: "A deceptively tricky platformer where floors collapse, spikes appear out of nowhere, and the portals move when you get close!",
     category: "Action",
     thumbnail: "https://ubghyper.github.io/GameList.github.io/Level-Devil/level-devil.png",
-    banner: arcadeBanner,
+    
     tags: ["Platformer", "Troll", "Puzzle", "Reflex"],
     rating: 4.9,
     plays: 81200,
@@ -348,14 +361,15 @@ const CURATED_GAMES: Game[] = [
     title: "Watermelon Merge (Suika)",
     description: "Drop and merge delicious fruits to evolve from tiny cherries all the way to the Giant Watermelon!",
     category: "Puzzle",
-    thumbnail: wmThumb,
-    banner: arcadeBanner,
+    thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/SuikaGame/suika.png",
+    banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/SuikaGame/suika.png",
+    
     tags: ["Physics", "Merge", "Watermelon", "Casual"],
     rating: 4.9,
     plays: 24890,
     author: "Owen Watermelon Studios",
     featured: true,
-    iframeSrc: "/games/watermelon-merge.html",
+    iframeSrc: "games/watermelon-merge.html",
     iframeCode: `<iframe src="/games/watermelon-merge.html" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`,
     controls: [
       { key: "Mouse / Touch", action: "Aim & Drop Fruit" }
@@ -372,7 +386,7 @@ const CURATED_GAMES: Game[] = [
     plays: 19430,
     author: "Retro Arcade Labs",
     featured: true,
-    iframeSrc: "/games/snake.html",
+    iframeSrc: "games/snake.html",
     iframeCode: `<iframe src="/games/snake.html" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`,
     controls: [
       { key: "Arrow Keys / WASD", action: "Change Direction" },
@@ -390,7 +404,7 @@ const CURATED_GAMES: Game[] = [
     plays: 31200,
     author: "Pixel Block Syndicate",
     featured: true,
-    iframeSrc: "/games/tetris.html",
+    iframeSrc: "games/tetris.html",
     iframeCode: `<iframe src="/games/tetris.html" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`,
     controls: [
       { key: "← / →", action: "Move Piece" },
@@ -410,7 +424,7 @@ const CURATED_GAMES: Game[] = [
     plays: 16800,
     author: "Gabriele Cirulli & Owen",
     featured: false,
-    iframeSrc: "/games/2048.html",
+    iframeSrc: "games/2048.html",
     iframeCode: `<iframe src="/games/2048.html" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`,
     controls: [
       { key: "Arrow Keys / WASD", action: "Slide Tiles" },
@@ -428,7 +442,7 @@ const CURATED_GAMES: Game[] = [
     plays: 14320,
     author: "Atari Inspired",
     featured: false,
-    iframeSrc: "/games/breakout.html",
+    iframeSrc: "games/breakout.html",
     iframeCode: `<iframe src="/games/breakout.html" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`,
     controls: [
       { key: "Mouse / Touch", action: "Move Paddle" }
@@ -445,7 +459,7 @@ const CURATED_GAMES: Game[] = [
     plays: 22100,
     author: "Dong Nguyen Homage",
     featured: false,
-    iframeSrc: "/games/flappy.html",
+    iframeSrc: "games/flappy.html",
     iframeCode: `<iframe src="/games/flappy.html" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`,
     controls: [
       { key: "Space / Tap", action: "Flap Wings" }
@@ -462,7 +476,7 @@ const CURATED_GAMES: Game[] = [
     plays: 18900,
     author: "Galactic Studios",
     featured: false,
-    iframeSrc: "/games/space.html",
+    iframeSrc: "games/space.html",
     iframeCode: `<iframe src="/games/space.html" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`,
     controls: [
       { key: "← / → / WASD", action: "Move Starship" },
@@ -480,7 +494,7 @@ const CURATED_GAMES: Game[] = [
     plays: 12400,
     author: "Owen Watermelon",
     featured: false,
-    iframeSrc: "/games/pong.html",
+    iframeSrc: "games/pong.html",
     iframeCode: `<iframe src="/games/pong.html" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`,
     controls: [
       { key: "W / S or Mouse", action: "Player 1 Paddle" },
@@ -493,5 +507,3 @@ export const DEFAULT_GAMES: Game[] = [
   ...CURATED_GAMES,
   ...(ubgGamesList as unknown as Game[])
 ];
-
-export { wmLogo, wmThumb, arcadeBanner };

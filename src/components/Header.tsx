@@ -1,7 +1,6 @@
 import React from 'react';
 import { ShieldAlert, Plus, Lock } from 'lucide-react';
 import { triggerPanic } from '../data/cloakPresets';
-import wmLogo from '../assets/images/owen_watermelon_logo_1790304644388.jpg';
 
 interface HeaderProps {
   currentTab: 'games' | 'sandbox' | 'cloaker' | 'playground' | 'catalog';
@@ -25,12 +24,9 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onSelectTab('games')}
           className="flex items-center gap-2.5 cursor-pointer select-none group shrink-0"
         >
-          <img 
-            src={wmLogo} 
-            alt="Owen Watermelon V3" 
-            className="w-8 h-8 rounded-lg object-cover border border-[#10b981]/30 group-hover:border-[#10b981] transition-colors"
-            referrerPolicy="no-referrer"
-          />
+          <div className="w-8 h-8 rounded-lg bg-[#10b981]/20 border border-[#10b981]/40 flex items-center justify-center text-lg shadow-sm group-hover:border-[#10b981] transition-colors select-none">
+            🍉
+          </div>
           <span className="text-lg lg:text-xl font-extrabold tracking-tight text-white group-hover:text-[#10b981] transition-colors whitespace-nowrap">
             Owen Watermelon <span className="text-[#ff2d55]">V3</span>
           </span>

@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { Game } from '../types/game';
 import { DEFAULT_GAMES } from '../data/defaultGames';
 
-const STORAGE_KEY = 'owen_watermelon_v3_games_v4';
-const PREV_KEY = 'owen_watermelon_v3_games_v3';
+const STORAGE_KEY = 'owen_watermelon_v3_games_v6';
+const PREV_KEY = 'owen_watermelon_v3_games_v5';
 const FAVORITES_KEY = 'owen_watermelon_v3_favorites';
 
 export function resolveAssetUrl(url: string): string {
@@ -19,25 +19,24 @@ export function resolveAssetUrl(url: string): string {
   return `${base.endsWith('/') ? base : base + '/'}${clean}`;
 }
 
+const defaultGamesMap = new Map(DEFAULT_GAMES.map(g => [g.id, g]));
+
 function sanitizeGame(game: Game): Game {
-  let thumb = game.thumbnail;
-  if (thumb && thumb.startsWith('/src/assets/images/')) {
-    if (thumb.includes('retro_bowl')) thumb = 'images/retro_bowl_thumb.jpg';
-    else if (thumb.includes('watermelon_merge')) thumb = 'images/watermelon_merge_thumb.jpg';
-    else if (thumb.includes('granny')) thumb = 'images/granny_horror_thumb.jpg';
-    else if (thumb.includes('basket_random')) thumb = 'images/basket_random_thumb.jpg';
-    else if (thumb.includes('fnaf1')) thumb = 'images/fnaf1_game_thumb.jpg';
-    else thumb = 'images/owen_watermelon_logo.jpg';
-  } else if (thumb && thumb.startsWith('/images/')) {
-    thumb = thumb.slice(1);
+  const authoritative = defaultGamesMap.get(game.id);
+  if (authoritative) {
+    return {
+      ...game,
+      thumbnail: authoritative.thumbnail,
+      banner: authoritative.banner,
+      iframeSrc: authoritative.iframeSrc,
+      mirrors: authoritative.mirrors || game.mirrors,
+      controls: authoritative.controls || game.controls
+    };
   }
 
-
-  let banner = game.banner;
-  if (banner && banner.startsWith('/src/assets/images/')) {
-    banner = 'images/arcade_hero_banner.jpg';
-  } else if (banner && banner.startsWith('/images/')) {
-    banner = banner.slice(1);
+  let thumb = game.thumbnail || '';
+  if (thumb.includes('arcade_hero_banner') || thumb.includes('watermelon_logo') || thumb.includes('retro_bowl_thumb') || thumb.includes('granny_horror_thumb')) {
+    thumb = 'https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Slope/slope.jpg';
   }
 
   let iframeSrc = game.iframeSrc;
@@ -45,7 +44,7 @@ function sanitizeGame(game: Game): Game {
     iframeSrc = iframeSrc.slice(1);
   }
 
-  return { ...game, thumbnail: thumb, banner, iframeSrc };
+  return { ...game, thumbnail: thumb, iframeSrc };
 }
 
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Play, Sparkles, Search, Heart, Flame, Gamepad2, Shield } from 'lucide-react';
 import { Game } from '../types/game';
-import arcadeBanner from '../assets/images/arcade_hero_banner_1790304665471.jpg';
 
 interface HeroBannerProps {
   featuredGame?: Game;
@@ -24,22 +23,26 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
   categories,
   totalGames
 }) => {
+  const heroArt = featuredGame?.banner || featuredGame?.thumbnail || '';
+
   return (
     <div className="w-full flex flex-col gap-6">
       {/* Featured Banner Card */}
       {featuredGame && (
         <div className="relative w-full rounded-2xl overflow-hidden border border-[#16402a] bg-[#092015] shadow-2xl">
-          {/* Backdrop image */}
-          <div className="absolute inset-0 z-0 overflow-hidden">
-            <img
-              src={featuredGame.banner || arcadeBanner}
-              alt="Featured Arcade"
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-cover opacity-25 scale-105 blur-[1px]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#07130c] via-[#07130c]/90 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#07130c] via-transparent to-transparent" />
-          </div>
+          {/* Backdrop image using authentic game art */}
+          {heroArt && (
+            <div className="absolute inset-0 z-0 overflow-hidden">
+              <img
+                src={heroArt}
+                alt={featuredGame.title}
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover opacity-20 scale-105 blur-[1px]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#07130c] via-[#07130c]/90 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#07130c] via-transparent to-transparent" />
+            </div>
+          )}
 
           {/* Banner content */}
           <div className="relative z-10 p-6 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 max-w-4xl">

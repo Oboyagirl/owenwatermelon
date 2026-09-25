@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Lock, Unlock, Eye, EyeOff, ShieldCheck, KeyRound, AlertCircle, ShieldAlert } from 'lucide-react';
 import { triggerPanic } from '../data/cloakPresets';
-import wmLogo from '../assets/images/owen_watermelon_logo_1790304644388.jpg';
 
 interface PasscodeGateProps {
   onUnlock: () => void;
@@ -71,13 +70,8 @@ export const PasscodeGate: React.FC<PasscodeGateProps> = ({ onUnlock }) => {
           
           {/* Logo badge with glowing ring */}
           <div className="relative mb-5">
-            <div className="w-20 h-20 rounded-2xl overflow-hidden border-2 border-[#10b981] shadow-lg shadow-[#10b981]/20">
-              <img 
-                src={wmLogo} 
-                alt="Owen Watermelon V3" 
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
+            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#10b981]/20 via-[#0c2016] to-[#ff2d55]/20 border-2 border-[#10b981] shadow-lg shadow-[#10b981]/20 flex items-center justify-center text-4xl select-none">
+              🍉
             </div>
             <div className={`absolute -bottom-2 -right-2 p-2 rounded-xl border transition-colors ${
               isSuccess 

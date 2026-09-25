@@ -13,7 +13,9 @@ import {
   Tv,
   Code,
   Save,
-  Undo2
+  Undo2,
+  Server,
+  RefreshCw
 } from 'lucide-react';
 import { Game } from '../types/game';
 import { openAboutBlankGame, resolveAssetUrl } from '../services/gamesStore';
@@ -52,6 +54,10 @@ export const GamePlayer: React.FC<GamePlayerProps> = ({
   const [activeCustomHtml, setActiveCustomHtml] = useState<string | undefined>(game.customHtml);
   const [savedSuccess, setSavedSuccess] = useState(false);
 
+  // Alternative working mirrors support
+  const mirrorsList = game.mirrors && game.mirrors.length > 0 ? game.mirrors : [game.iframeSrc];
+  const [currentMirrorIndex, setCurrentMirrorIndex] = useState(0);
+
   // Sync state whenever the selected game changes
   useEffect(() => {
     const code = game.iframeCode || `<iframe src="${game.iframeSrc}" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`;
@@ -60,7 +66,22 @@ export const GamePlayer: React.FC<GamePlayerProps> = ({
     setActiveCustomHtml(game.customHtml);
     setShowIframeEditor(false);
     setSavedSuccess(false);
+    setCurrentMirrorIndex(0);
   }, [game.id, game.iframeSrc, game.iframeCode, game.customHtml]);
+
+  const handleNextMirror = () => {
+    if (mirrorsList.length <= 1) {
+      handleReload();
+      return;
+    }
+    const nextIdx = (currentMirrorIndex + 1) % mirrorsList.length;
+    setCurrentMirrorIndex(nextIdx);
+    const nextSrc = mirrorsList[nextIdx];
+    setActiveIframeSrc(nextSrc);
+    setActiveCustomHtml(undefined);
+    setIframeHtmlInput(`<iframe src="${nextSrc}" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`);
+    setKeyCounter(prev => prev + 1);
+  };
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -269,6 +290,17 @@ export const GamePlayer: React.FC<GamePlayerProps> = ({
           </div>
 
           <div className="flex items-center gap-1 sm:gap-2">
+            {mirrorsList.length > 1 && (
+              <button
+                onClick={handleNextMirror}
+                className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold text-emerald-400 bg-[#16402a] hover:bg-[#255238] border border-[#10b981]/30 rounded-lg transition-colors cursor-pointer"
+                title="Switch between alternative game servers/mirrors"
+              >
+                <Server className="w-3.5 h-3.5 text-[#10b981]" />
+                <span className="hidden sm:inline">Server</span> {currentMirrorIndex + 1}/{mirrorsList.length}
+              </button>
+            )}
+
             <button
               onClick={() => setShowIframeEditor(!showIframeEditor)}
               className={`p-2 rounded-lg transition-colors cursor-pointer ${
@@ -326,10 +358,41 @@ export const GamePlayer: React.FC<GamePlayerProps> = ({
             srcDoc={activeCustomHtml || undefined}
             title={game.title}
             className="w-full h-full border-0 block"
-            allow="autoplay; fullscreen; gamepad; pointer-lock; focus-without-user-activation; camera; microphone *"
+            allow="autoplay; fullscreen; gamepad; pointer-lock; focus-without-user-activation; camera; microphone; clipboard-write; web-share *"
             allowFullScreen
             sandbox={game.sandbox ? game.sandbox : undefined}
           />
+        </div>
+      </div>
+
+      {/* Quick Troubleshooting & Server Switcher Bar */}
+      <div className="w-full bg-[#0c2016]/90 border border-[#16402a] rounded-xl px-4 py-2.5 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-300">
+        <div className="flex items-center gap-2">
+          <Info className="w-4 h-4 text-[#10b981] shrink-0" />
+          <span>Game blank or stuck? Try switching server mirror or launching stealth window:</span>
+        </div>
+        <div className="flex items-center gap-2">
+          {mirrorsList.length > 1 && (
+            <button
+              onClick={handleNextMirror}
+              className="px-2.5 py-1 bg-[#16402a] hover:bg-[#255238] text-emerald-300 font-medium rounded-lg border border-[#2d6a4f] transition-colors cursor-pointer flex items-center gap-1.5"
+            >
+              <RefreshCw className="w-3.5 h-3.5 text-[#10b981]" />
+              <span>Switch Mirror ({currentMirrorIndex + 1}/{mirrorsList.length})</span>
+            </button>
+          )}
+          <button
+            onClick={() => openAboutBlankGame({
+              ...game,
+              iframeSrc: activeIframeSrc,
+              customHtml: activeCustomHtml
+            })}
+            className="px-2.5 py-1 bg-[#10b981]/20 hover:bg-[#10b981]/30 text-emerald-300 font-medium rounded-lg border border-[#10b981]/30 transition-colors cursor-pointer flex items-center gap-1.5"
+            title="Opens game in an unblocked about:blank popup"
+          >
+            <ExternalLink className="w-3.5 h-3.5 text-[#10b981]" />
+            <span>Launch in Stealth Window</span>
+          </button>
         </div>
       </div>
 

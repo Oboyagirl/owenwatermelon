@@ -17,6 +17,7 @@ export interface Game {
   featured?: boolean;
   iframeSrc: string;
   iframeCode: string;
+  mirrors?: string[];
   sandbox?: string;
   controls?: GameControl[];
 
