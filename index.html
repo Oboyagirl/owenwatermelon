@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owen Watermelon V3</title>
+    <meta name="description" content="Unblocked games website template with built-in iframe games catalog, tab cloaker, web proxy tools, and customizable games JSON." />
+    <meta property="og:title" content="Owen Watermelon V3" />
+    <meta property="og:description" content="Unblocked games website template with built-in iframe games catalog, tab cloaker, web proxy tools, and customizable games JSON." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="alternate icon" href="./favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+      // Fix GitHub Pages missing trailing slash so relative paths ./assets/... resolve to /repo/assets instead of /assets
+      (function() {
+        var p = window.location.pathname;
+        if (!p.endsWith('/') && !p.split('/').pop().includes('.')) {
+          window.location.replace(p + '/' + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-[#07130c] text-slate-100 min-h-screen antialiased selection:bg-[#ff2d55]/30 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+    <script>
+      (function() {
+        // Fallback for hosting from repository root on GitHub Pages without build server
+        setTimeout(function() {
+          var root = document.getElementById('root');
+          if (root && root.children.length === 0) {
+            var script = document.createElement('script');
+            script.type = 'module';
+            script.crossOrigin = 'anonymous';
+            script.src = './assets/index.js';
+            document.body.appendChild(script);
+
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.crossOrigin = 'anonymous';
+            link.href = './assets/index.css';
+            document.head.appendChild(link);
+          }
+        }, 300);
+      })();
+    </script>
+  </body>
+
+</html>
+
+
