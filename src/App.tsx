@@ -4,19 +4,16 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { Header } from './components/Header';
+import { Header, REQUEST_GAME_URL } from './components/Header';
 import { HeroBanner } from './components/HeroBanner';
 import { GameCard } from './components/GameCard';
 import { GamePlayer } from './components/GamePlayer';
-import { WebSandboxViewer } from './components/WebSandboxViewer';
 import { TabCloaker } from './components/TabCloaker';
-import { CodePlayground } from './components/CodePlayground';
-import { JsonManagerModal } from './components/JsonManagerModal';
 import { PasscodeGate, PASSCODE_STORAGE_KEY } from './components/PasscodeGate';
 import { useGamesStore } from './services/gamesStore';
 import { Game } from './types/game';
 import { triggerPanic } from './data/cloakPresets';
-import { Flame, Heart, Sparkles, FolderDown, Terminal } from 'lucide-react';
+import { Heart, Sparkles, ExternalLink } from 'lucide-react';
 
 export default function App() {
   const {
@@ -25,19 +22,13 @@ export default function App() {
     selectedGame,
     setSelectedGame,
     toggleFavorite,
-    addGame,
-    removeGame,
     updateGame,
-    resetToDefault,
-    importJsonCatalog,
-    downloadJson,
     recordPlay
   } = useGamesStore();
 
-  const [currentTab, setCurrentTab] = useState<'games' | 'sandbox' | 'cloaker' | 'playground' | 'catalog'>('games');
+  const [currentTab, setCurrentTab] = useState<'games' | 'cloaker'>('games');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [isJsonModalOpen, setIsJsonModalOpen] = useState(false);
   const [visibleCount, setVisibleCount] = useState(48);
 
   // Authentication gate state with persistence
@@ -60,14 +51,13 @@ export default function App() {
   // Global Panic Key Listener (Esc)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // If user is inside code editor textarea or input, allow normal escape unless Escape with Shift
-      if (e.key === 'Escape' && !isJsonModalOpen && !selectedGame) {
+      if (e.key === 'Escape' && !selectedGame) {
         triggerPanic();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isJsonModalOpen, selectedGame]);
+  }, [selectedGame]);
 
   const handleSelectGame = (game: Game) => {
     setSelectedGame(game);
@@ -84,16 +74,12 @@ export default function App() {
     'Favorites',
     'Action',
     'Racing',
-    'Horror',
     'Sports',
-    'Platformer',
-    'Shooter',
     'Puzzle',
     'Arcade',
     'Multiplayer',
     'Retro',
-    'Sandbox',
-    'Custom'
+    'Casual'
   ];
 
   const filteredGames = games.filter(g => {
@@ -106,7 +92,6 @@ export default function App() {
 
     if (selectedCategory === 'All') return true;
     if (selectedCategory === 'Favorites') return favorites.includes(g.id);
-    if (selectedCategory === 'Custom') return !!g.isCustom;
     const catLower = selectedCategory.toLowerCase();
     return (
       g.category.toLowerCase() === catLower ||
@@ -128,14 +113,9 @@ export default function App() {
       <Header
         currentTab={currentTab}
         onSelectTab={tab => {
-          if (tab === 'catalog') {
-            setIsJsonModalOpen(true);
-          } else {
-            setCurrentTab(tab);
-            setSelectedGame(null);
-          }
+          setCurrentTab(tab);
+          setSelectedGame(null);
         }}
-        onOpenAddGame={() => setIsJsonModalOpen(true)}
         onLockSite={handleLockSite}
       />
 
@@ -249,30 +229,33 @@ export default function App() {
                       <span className="text-4xl">🍉</span>
                       <h3 className="text-base font-bold text-white">No matching games found</h3>
                       <p className="text-xs text-slate-400 max-w-sm">
-                        Try adjusting your search query or select another category from the filters above.
+                        Try adjusting your search query or request a game to be added.
                       </p>
-                      <button
-                        onClick={() => { setSearchTerm(''); setSelectedCategory('All'); }}
-                        className="mt-2 px-4 py-2 bg-[#10b981] hover:bg-[#34d399] text-[#064e3b] font-bold text-xs rounded-lg transition-colors cursor-pointer"
-                      >
-                        Clear Filters
-                      </button>
+                      <div className="flex items-center gap-3 mt-2">
+                        <button
+                          onClick={() => { setSearchTerm(''); setSelectedCategory('All'); }}
+                          className="px-4 py-2 bg-[#10b981] hover:bg-[#34d399] text-[#064e3b] font-bold text-xs rounded-lg transition-colors cursor-pointer"
+                        >
+                          Clear Filters
+                        </button>
+                        <a
+                          href={REQUEST_GAME_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-4 py-2 bg-[#16402a] hover:bg-[#255238] text-emerald-300 font-bold text-xs rounded-lg transition-colors flex items-center gap-1.5"
+                        >
+                          <span>Request This Game</span>
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
                     </div>
                   )}
                 </div>
               </div>
             )}
 
-            {/* WEB SANDBOX VIEWER TAB */}
-            {currentTab === 'sandbox' && <WebSandboxViewer />}
-
             {/* TAB CLOAKER & CAMOUFLAGE TAB */}
             {currentTab === 'cloaker' && <TabCloaker />}
-
-            {/* CODE PLAYGROUND & GAME EMBEDDER TAB */}
-            {currentTab === 'playground' && (
-              <CodePlayground onAddGameToStore={addGame} />
-            )}
           </>
         )}
       </main>
@@ -283,33 +266,24 @@ export default function App() {
           <div className="flex items-center gap-2">
             <span className="font-bold text-white">Owen Watermelon V3</span>
             <span>·</span>
-            <span>Unblocked Games & Web Utilities Template</span>
+            <span>Unblocked Games Arcade</span>
           </div>
 
           <div className="flex items-center gap-4">
-            <button
-              onClick={() => setIsJsonModalOpen(true)}
-              className="hover:text-white transition-colors flex items-center gap-1 cursor-pointer"
+            <a
+              href={REQUEST_GAME_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#10b981] hover:text-[#34d399] transition-colors flex items-center gap-1.5 font-medium"
             >
-              <FolderDown className="w-3.5 h-3.5" />
-              <span>Download games.json</span>
-            </button>
+              <span>Request a Game</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
             <span>·</span>
             <span className="text-slate-500 font-mono">Press Esc to Panic</span>
           </div>
         </div>
       </footer>
-
-      {/* JSON Catalog Manager Modal */}
-      <JsonManagerModal
-        isOpen={isJsonModalOpen}
-        onClose={() => setIsJsonModalOpen(false)}
-        games={games}
-        onImportJson={importJsonCatalog}
-        onDownloadJson={downloadJson}
-        onResetToDefault={resetToDefault}
-        onAddGame={addGame}
-      />
     </div>
   );
 }

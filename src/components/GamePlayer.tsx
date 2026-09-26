@@ -358,7 +358,7 @@ export const GamePlayer: React.FC<GamePlayerProps> = ({
             srcDoc={activeCustomHtml || undefined}
             title={game.title}
             className="w-full h-full border-0 block"
-            allow="autoplay; fullscreen; gamepad; pointer-lock; focus-without-user-activation; camera; microphone; clipboard-write; web-share *"
+            allow="autoplay; fullscreen; gamepad; pointer-lock; clipboard-write; web-share"
             allowFullScreen
             sandbox={game.sandbox ? game.sandbox : undefined}
           />

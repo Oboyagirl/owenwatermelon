@@ -1,11 +1,12 @@
 import React from 'react';
-import { ShieldAlert, Plus, Lock } from 'lucide-react';
+import { ShieldAlert, ExternalLink, Lock } from 'lucide-react';
 import { triggerPanic } from '../data/cloakPresets';
 
+export const REQUEST_GAME_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScEvS0_M84dApQkx9FOJCDq1kYtCwRHw1BWcJkGemU-fsLAkw/viewform';
+
 interface HeaderProps {
-  currentTab: 'games' | 'sandbox' | 'cloaker' | 'playground' | 'catalog';
-  onSelectTab: (tab: 'games' | 'sandbox' | 'cloaker' | 'playground' | 'catalog') => void;
-  onOpenAddGame: () => void;
+  currentTab: 'games' | 'cloaker';
+  onSelectTab: (tab: 'games' | 'cloaker') => void;
   onLockSite?: () => void;
   activeCloakTitle?: string;
 }
@@ -13,7 +14,6 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({
   currentTab,
   onSelectTab,
-  onOpenAddGame,
   onLockSite,
 }) => {
   return (
@@ -32,60 +32,47 @@ export const Header: React.FC<HeaderProps> = ({
           </span>
         </div>
 
-        {/* Zone 2: 4-6 clean text navigation links */}
+        {/* Zone 2: Clean text navigation links */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
           <button
             onClick={() => onSelectTab('games')}
-            className={`transition-colors whitespace-nowrap ${
+            className={`transition-colors whitespace-nowrap cursor-pointer ${
               currentTab === 'games' ? 'text-[#10b981] font-semibold' : 'text-slate-300 hover:text-white'
             }`}
           >
             Arcade Hub
           </button>
           <button
-            onClick={() => onSelectTab('sandbox')}
-            className={`transition-colors whitespace-nowrap ${
-              currentTab === 'sandbox' ? 'text-[#10b981] font-semibold' : 'text-slate-300 hover:text-white'
-            }`}
-          >
-            Web Sandbox
-          </button>
-          <button
             onClick={() => onSelectTab('cloaker')}
-            className={`transition-colors whitespace-nowrap ${
+            className={`transition-colors whitespace-nowrap cursor-pointer ${
               currentTab === 'cloaker' ? 'text-[#10b981] font-semibold' : 'text-slate-300 hover:text-white'
             }`}
           >
             Tab Cloaker
           </button>
-          <button
-            onClick={() => onSelectTab('playground')}
-            className={`transition-colors whitespace-nowrap ${
-              currentTab === 'playground' ? 'text-[#10b981] font-semibold' : 'text-slate-300 hover:text-white'
-            }`}
+          <a
+            href={REQUEST_GAME_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-300 hover:text-[#10b981] transition-colors whitespace-nowrap flex items-center gap-1.5"
           >
-            Code Sandbox
-          </button>
-          <button
-            onClick={() => onSelectTab('catalog')}
-            className={`transition-colors whitespace-nowrap ${
-              currentTab === 'catalog' ? 'text-[#10b981] font-semibold' : 'text-slate-300 hover:text-white'
-            }`}
-          >
-            JSON Catalog
-          </button>
+            <span>Request Game</span>
+            <ExternalLink className="w-3.5 h-3.5 text-[#10b981]" />
+          </a>
         </nav>
 
-        {/* Zone 3: 1-2 primary actions */}
+        {/* Zone 3: Actions */}
         <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
-          <button
-            onClick={onOpenAddGame}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-[#10b981]/20 hover:bg-[#10b981]/30 border border-[#10b981]/40 rounded-lg transition-all whitespace-nowrap cursor-pointer"
-            title="Add game via iframe or JSON"
+          <a
+            href={REQUEST_GAME_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#064e3b] bg-[#10b981] hover:bg-[#34d399] rounded-lg transition-all whitespace-nowrap cursor-pointer shadow-md hover:shadow-emerald-900/30 font-sans"
+            title="Request a new game to be added"
           >
-            <Plus className="w-3.5 h-3.5 text-[#10b981]" />
-            <span className="hidden sm:inline">Add Game</span>
-          </button>
+            <span>Request Game</span>
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
 
           {onLockSite && (
             <button
@@ -113,34 +100,25 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="md:hidden flex items-center justify-around pt-3 border-t border-[#16402a] mt-2.5 text-xs">
         <button
           onClick={() => onSelectTab('games')}
-          className={`${currentTab === 'games' ? 'text-[#10b981] font-bold' : 'text-slate-400'}`}
+          className={`cursor-pointer ${currentTab === 'games' ? 'text-[#10b981] font-bold' : 'text-slate-400'}`}
         >
-          Arcade
-        </button>
-        <button
-          onClick={() => onSelectTab('sandbox')}
-          className={`${currentTab === 'sandbox' ? 'text-[#10b981] font-bold' : 'text-slate-400'}`}
-        >
-          Sandbox
+          Arcade Hub
         </button>
         <button
           onClick={() => onSelectTab('cloaker')}
-          className={`${currentTab === 'cloaker' ? 'text-[#10b981] font-bold' : 'text-slate-400'}`}
+          className={`cursor-pointer ${currentTab === 'cloaker' ? 'text-[#10b981] font-bold' : 'text-slate-400'}`}
         >
-          Cloak
+          Tab Cloaker
         </button>
-        <button
-          onClick={() => onSelectTab('playground')}
-          className={`${currentTab === 'playground' ? 'text-[#10b981] font-bold' : 'text-slate-400'}`}
+        <a
+          href={REQUEST_GAME_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#10b981] font-semibold flex items-center gap-1"
         >
-          Editor
-        </button>
-        <button
-          onClick={() => onSelectTab('catalog')}
-          className={`${currentTab === 'catalog' ? 'text-[#10b981] font-bold' : 'text-slate-400'}`}
-        >
-          JSON
-        </button>
+          <span>Request Game</span>
+          <ExternalLink className="w-3 h-3" />
+        </a>
       </div>
     </header>
   );
