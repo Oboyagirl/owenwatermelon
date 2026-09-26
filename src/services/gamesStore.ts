@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { Game } from '../types/game';
 import { DEFAULT_GAMES } from '../data/defaultGames';
 
-const STORAGE_KEY = 'owen_watermelon_v3_games_v6';
-const PREV_KEY = 'owen_watermelon_v3_games_v5';
+const STORAGE_KEY = 'owen_watermelon_v3_games_v10';
+const PREV_KEY = 'owen_watermelon_v3_games_v8';
 const FAVORITES_KEY = 'owen_watermelon_v3_favorites';
 
 export function resolveAssetUrl(url: string): string {
@@ -29,6 +29,7 @@ function sanitizeGame(game: Game): Game {
       thumbnail: authoritative.thumbnail,
       banner: authoritative.banner,
       iframeSrc: authoritative.iframeSrc,
+      source: authoritative.source || game.source || 'unblocked',
       mirrors: authoritative.mirrors || game.mirrors,
       controls: authoritative.controls || game.controls
     };
@@ -44,7 +45,7 @@ function sanitizeGame(game: Game): Game {
     iframeSrc = iframeSrc.slice(1);
   }
 
-  return { ...game, thumbnail: thumb, iframeSrc };
+  return { ...game, thumbnail: thumb, iframeSrc, source: game.source || 'unblocked' };
 }
 
 

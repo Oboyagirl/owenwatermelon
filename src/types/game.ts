@@ -14,6 +14,7 @@ export interface Game {
   rating: number;
   plays: number;
   author: string;
+  source?: 'poki' | 'crazygames' | 'unblocked' | 'original';
   featured?: boolean;
   iframeSrc: string;
   iframeCode: string;

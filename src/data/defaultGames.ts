@@ -4,6 +4,7 @@ import ubgGamesList from './ubgFilteredGames.json';
 const CURATED_GAMES: Game[] = [
   {
     id: "granny",
+    source: "unblocked",
     title: "Granny",
     description: "Welcome to Granny. Escape her creepy house alive within five days. Move silently, search cabinets for keys, and don't make any noise!",
     category: "Action",
@@ -27,20 +28,21 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "basket-random",
+    source: "crazygames",
     title: "Basket Random",
     description: "Wacky ragdoll two-player basketball with physics-defying players, changing balls, and unpredictable courts.",
     category: "Sports",
     thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Basket-Random/basketrandom.jpg",
     banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Basket-Random/splash.jpeg",
-    mirrors: ["https://basket-random.pages.dev/", "https://freeonlinewebtools.github.io/gamelist4.github.io/Basket-Random/", "https://ubghyper.github.io/GameList.github.io/Basket-Random/"],
+    mirrors: ["https://ubghyper.github.io/GameList.github.io/Basket-Random/", "https://freeonlinewebtools.github.io/gamelist4.github.io/Basket-Random/", "https://ubghyper.github.io/GameList.github.io/Basket-Random/"],
     
     tags: ["Basketball", "2 Player", "Ragdoll", "Sports", "Multiplayer"],
     rating: 4.9,
     plays: 53100,
     author: "RHM Interactive",
     featured: true,
-    iframeSrc: "https://basket-random.pages.dev/",
-    iframeCode: `<iframe src="https://basket-random.pages.dev/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
+    iframeSrc: "https://ubghyper.github.io/GameList.github.io/Basket-Random/",
+    iframeCode: `<iframe src="https://ubghyper.github.io/GameList.github.io/Basket-Random/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
     controls: [
       { key: "W", action: "Player 1 Jump & Shoot" },
       { key: "Up Arrow", action: "Player 2 Jump & Shoot" }
@@ -48,6 +50,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "fnaf-1",
+    source: "unblocked",
     title: "Five Nights at Freddy's (FNAF 1)",
     description: "Survive the night shift as the security guard at Freddy Fazbear's Pizza. Monitor surveillance cameras and conserve power before animatronics enter the office!",
     category: "Action",
@@ -70,20 +73,21 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "retro-bowl",
+    source: "unblocked",
     title: "Retro Bowl",
     description: "Manage your NFL team, call tactical audibles, pass bullet balls, and lead your franchise to victory in this beloved 8-bit retro football sim.",
     category: "Sports",
     thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Retro-Bowl/retrobowl.jpg",
     banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Retro-Bowl/html5game/splash.png",
-    mirrors: ["https://retro--bowl.pages.dev/", "https://freeonlinewebtools.github.io/gamelist8.github.io/Retro-Bowl/", "https://ubghyper.github.io/GameList.github.io/Retro-Bowl/"],
+    mirrors: ["https://ubghyper.github.io/GameList.github.io/Retro-Bowl/", "https://freeonlinewebtools.github.io/gamelist8.github.io/Retro-Bowl/", "https://ubghyper.github.io/GameList.github.io/Retro-Bowl/"],
     
     tags: ["Football", "Sports", "Pixel", "NFL", "Retro Bowl"],
     rating: 4.9,
     plays: 48920,
     author: "New Star Games",
     featured: true,
-    iframeSrc: "https://retro--bowl.pages.dev/",
-    iframeCode: `<iframe src="https://retro--bowl.pages.dev/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
+    iframeSrc: "https://ubghyper.github.io/GameList.github.io/Retro-Bowl/",
+    iframeCode: `<iframe src="https://ubghyper.github.io/GameList.github.io/Retro-Bowl/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
     controls: [
       { key: "Mouse Drag & Release", action: "Pass & Aim Football" },
       { key: "W / S or Up / Down", action: "Dodge Tackles & Stiff Arm" },
@@ -92,20 +96,21 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "drive-mad",
+    source: "poki",
     title: "Drive Mad",
     description: "Navigate tricky obstacle courses in this physics-based driving game! Balance your truck carefully to reach the finish line without flipping.",
     category: "Racing",
     thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Drive-Mad/logo.jpg",
     banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Drive-Mad/webapp/cover.jpg",
-    mirrors: ["https://drive-mad.pages.dev/", "https://freeonlinewebtools.github.io/gamelist4.github.io/Drive-Mad/", "https://ubghyper.github.io/GameList.github.io/Drive-Mad/"],
+    mirrors: ["https://ubghyper.github.io/GameList.github.io/Drive-Mad/", "https://freeonlinewebtools.github.io/gamelist4.github.io/Drive-Mad/", "https://ubghyper.github.io/GameList.github.io/Drive-Mad/"],
     
     tags: ["Racing", "Physics", "Truck", "Driving", "Popular"],
     rating: 4.9,
     plays: 89400,
     author: "Martin Magni",
     featured: true,
-    iframeSrc: "https://drive-mad.pages.dev/",
-    iframeCode: `<iframe src="https://drive-mad.pages.dev/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
+    iframeSrc: "https://ubghyper.github.io/GameList.github.io/Drive-Mad/",
+    iframeCode: `<iframe src="https://ubghyper.github.io/GameList.github.io/Drive-Mad/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
     controls: [
       { key: "W / D or Up / Right", action: "Drive Forward / Steer" },
       { key: "S / A or Down / Left", action: "Brake / Reverse" }
@@ -113,40 +118,42 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "slope",
+    source: "crazygames",
     title: "Slope",
     description: "Roll an ultra-fast ball down a futuristic 3D neon tunnel course. Dodge obstacles, adjust your speed, and test your lightning-quick reflexes!",
     category: "Action",
     thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Slope/slope.jpg",
     banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Slope/slope.jpg",
-    mirrors: ["https://slope.pages.dev/", "https://ubghyper.github.io/g/Slope/", "https://freeonlinewebtools.github.io/gamelist4.github.io/Slope/"],
+    mirrors: ["https://ubghyper.github.io/GameList.github.io/Slope/", "https://ubghyper.github.io/g/Slope/", "https://freeonlinewebtools.github.io/gamelist4.github.io/Slope/"],
     
     tags: ["3D", "Runner", "Reflex", "Neon", "Arcade"],
     rating: 4.9,
     plays: 95200,
     author: "Rob Kay",
     featured: true,
-    iframeSrc: "https://slope.pages.dev/",
-    iframeCode: `<iframe src="https://slope.pages.dev/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
+    iframeSrc: "https://ubghyper.github.io/GameList.github.io/Slope/",
+    iframeCode: `<iframe src="https://ubghyper.github.io/GameList.github.io/Slope/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
     controls: [
       { key: "A / D or ← / →", action: "Steer Ball Left & Right" }
     ]
   },
   {
     id: "subway-surfers",
+    source: "poki",
     title: "Subway Surfers",
     description: "Dash along the subway tracks, dodge trains, leap over obstacles, and escape the grumpy inspector and his dog in the world's most famous endless runner!",
     category: "Action",
     thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Subway-Surfers/Subway-Surfers.png",
     banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Subway-Surfers/Subway-Surfers.png",
-    mirrors: ["https://subway-surfers.pages.dev/", "https://ubghyper.github.io/g/Subway-Surfers/"],
+    mirrors: ["https://ubghyper.github.io/GameList.github.io/Subway-Surfers/", "https://ubghyper.github.io/g/Subway-Surfers/"],
     
     tags: ["Endless Runner", "Action", "3D", "Classic"],
     rating: 4.9,
     plays: 124000,
     author: "SYBO Games",
     featured: true,
-    iframeSrc: "https://subway-surfers.pages.dev/",
-    iframeCode: `<iframe src="https://subway-surfers.pages.dev/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
+    iframeSrc: "https://ubghyper.github.io/GameList.github.io/Subway-Surfers/",
+    iframeCode: `<iframe src="https://ubghyper.github.io/GameList.github.io/Subway-Surfers/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
     controls: [
       { key: "← / →", action: "Move Left / Right" },
       { key: "↑ / Space", action: "Jump Over Barriers" },
@@ -155,40 +162,42 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "bitlife",
+    source: "crazygames",
     title: "Bitlife Life Simulator",
     description: "How will you live your BitLife? Make choices from birth through old age: study hard, fall in love, commit crimes, or become a billionaire!",
     category: "Casual",
     thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Bitlife/bitlife.png",
     banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/Bitlife/bitlife.png",
-    mirrors: ["https://bitlife.pages.dev/", "https://ubghyper.github.io/g/Bitlife/"],
+    mirrors: ["https://ubghyper.github.io/GameList.github.io/Bitlife/", "https://ubghyper.github.io/g/Bitlife/"],
     
     tags: ["Simulation", "RPG", "Choice", "Story"],
     rating: 4.8,
     plays: 87100,
     author: "Candywriter",
     featured: true,
-    iframeSrc: "https://bitlife.pages.dev/",
-    iframeCode: `<iframe src="https://bitlife.pages.dev/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
+    iframeSrc: "https://ubghyper.github.io/GameList.github.io/Bitlife/",
+    iframeCode: `<iframe src="https://ubghyper.github.io/GameList.github.io/Bitlife/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
     controls: [
       { key: "Mouse Click", action: "Make Life Decisions" }
     ]
   },
   {
     id: "1v1-lol",
+    source: "crazygames",
     title: "1v1.LOL",
     description: "Competitive third-person building simulator and shooter. Practice fast box fights, edit stairs, and battle players in 1v1 arenas.",
     category: "Action",
     thumbnail: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/1v1-LOL/1v1-LOL.png",
     banner: "https://raw.githubusercontent.com/ubghyper/GameList.github.io/main/1v1-LOL/1v1-LOL.png",
-    mirrors: ["https://1v1-lol.pages.dev/", "https://freeonlinewebtools.github.io/gamelist7.github.io/1v1-LOL/"],
+    mirrors: ["https://ubghyper.github.io/GameList.github.io/1v1-LOL/", "https://freeonlinewebtools.github.io/gamelist7.github.io/1v1-LOL/"],
     
     tags: ["Shooter", "Building", "Multiplayer", "Battle Royale", "1v1"],
     rating: 4.9,
     plays: 110000,
     author: "JustPlay.LOL",
     featured: true,
-    iframeSrc: "https://1v1-lol.pages.dev/",
-    iframeCode: `<iframe src="https://1v1-lol.pages.dev/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
+    iframeSrc: "https://ubghyper.github.io/GameList.github.io/1v1-LOL/",
+    iframeCode: `<iframe src="https://ubghyper.github.io/GameList.github.io/1v1-LOL/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
     controls: [
       { key: "WASD", action: "Move Character" },
       { key: "Left Click", action: "Shoot / Build" },
@@ -197,6 +206,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "cuphead",
+    source: "unblocked",
     title: "Cuphead",
     description: "The classic boss rush run-and-gun game inspired by 1930s rubber hose animation. Dodge projectiles, learn patterns, and defeat epic bosses.",
     category: "Action",
@@ -219,6 +229,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "minecraft-1-12",
+    source: "unblocked",
     title: "Minecraft 1.12.2 (Eaglercraft)",
     description: "Full Minecraft running in your browser: mine diamonds, craft tools, build huge structures, and play survival or creative mode!",
     category: "Sandbox",
@@ -241,6 +252,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "granny-2",
+    source: "unblocked",
     title: "Granny: Chapter Two",
     description: "Granny and Grandpa keep you locked in their house this time. To survive, you have to try to get out of their house, but be careful and quiet!",
     category: "Action",
@@ -262,6 +274,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "fnaf-2",
+    source: "unblocked",
     title: "Five Nights at Freddy's 2",
     description: "Welcome back to the new and improved Freddy Fazbear's Pizza! The old animatronics are joined by a new cast. Put on your Freddy Fazbear head to trick them!",
     category: "Action",
@@ -282,6 +295,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "fnaf-3",
+    source: "unblocked",
     title: "Five Nights at Freddy's 3",
     description: "Thirty years after Freddy Fazbear's Pizza closed its doors, the events that took place there have become nothing more than a rumor. Survive Springtrap!",
     category: "Action",
@@ -301,6 +315,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "fnaf-4",
+    source: "unblocked",
     title: "Five Nights at Freddy's 4",
     description: "The final chapter of the Five Nights at Freddy's original story. You must defend yourself against Nightmare Freddy, Chica, Bonnie, and Foxy lurking in your bedroom!",
     category: "Action",
@@ -321,6 +336,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "sprunki",
+    source: "poki",
     title: "Sprunki Incredibox",
     description: "The viral musical rhythm game with quirky animated beatboxers and dark horror transformations!",
     category: "Arcade",
@@ -331,14 +347,15 @@ const CURATED_GAMES: Game[] = [
     plays: 93400,
     author: "So Far So Good / NyankoBfLol",
     featured: true,
-    iframeSrc: "https://sprunki.pages.dev/",
-    iframeCode: `<iframe src="https://sprunki.pages.dev/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
+    iframeSrc: "https://ubghyper.github.io/GameList.github.io/Sprunki/",
+    iframeCode: `<iframe src="https://ubghyper.github.io/GameList.github.io/Sprunki/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
     controls: [
       { key: "Mouse Drag", action: "Drag Characters & Outfits" }
     ]
   },
   {
     id: "level-devil",
+    source: "poki",
     title: "Level Devil",
     description: "A deceptively tricky platformer where floors collapse, spikes appear out of nowhere, and the portals move when you get close!",
     category: "Action",
@@ -349,8 +366,8 @@ const CURATED_GAMES: Game[] = [
     plays: 81200,
     author: "Unept",
     featured: true,
-    iframeSrc: "https://level-devil.pages.dev/",
-    iframeCode: `<iframe src="https://level-devil.pages.dev/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
+    iframeSrc: "https://ubghyper.github.io/GameList.github.io/Level-Devil/",
+    iframeCode: `<iframe src="https://ubghyper.github.io/GameList.github.io/Level-Devil/" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>`,
     controls: [
       { key: "A / D or ← / →", action: "Move" },
       { key: "Space or W or ↑", action: "Jump" }
@@ -358,6 +375,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "watermelon-merge",
+    source: "original",
     title: "Watermelon Merge (Suika)",
     description: "Drop and merge delicious fruits to evolve from tiny cherries all the way to the Giant Watermelon!",
     category: "Puzzle",
@@ -395,6 +413,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "tetrix-blocks",
+    source: "original",
     title: "Tetrix Block Fall",
     description: "The quintessential falling tetromino blocks challenge with clean neon rendering, soft drop, and hard drop.",
     category: "Puzzle",
@@ -415,6 +434,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "neon-2048",
+    source: "original",
     title: "2048 Neon Watermelon",
     description: "Slide the numbers, double your power, and combine tiles until you unlock the mythical 2048 block.",
     category: "Puzzle",
@@ -433,6 +453,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "brick-smasher",
+    source: "original",
     title: "Watermelon Breakout",
     description: "Smash layers of juicy neon bricks, bounce the high-velocity orb, and test your paddle coordination.",
     category: "Arcade",
@@ -450,6 +471,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "flappy-melon",
+    source: "original",
     title: "Flappy Melon Flight",
     description: "Flap your watermelon slice through dangerous bamboo vines and avoid crashing to claim the gold medal.",
     category: "Casual",
@@ -467,6 +489,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "space-defender",
+    source: "original",
     title: "Space Defender 8-Bit",
     description: "Defend the sector against alien invaders and rogue asteroids in this classic top-down space blaster.",
     category: "Action",
@@ -485,6 +508,7 @@ const CURATED_GAMES: Game[] = [
   },
   {
     id: "cyber-pong",
+    source: "original",
     title: "Cyber Pong (1P & 2P)",
     description: "The grandfather of electronic games revamped with neon watermelon aesthetics and 2-player local battle mode.",
     category: "Sports",
